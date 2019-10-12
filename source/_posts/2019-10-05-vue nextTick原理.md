@@ -2,7 +2,7 @@
 layout: default
 title: vue nextTick原理
 description: vue nextTick
-categories: [周边环境]
+categories: [vue]
 tags: [vue, nextTick]
 ---
 # {{ page.title }}
