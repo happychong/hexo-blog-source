@@ -1,6 +1,6 @@
 ---
 layout: default
-title: node核心模块常用语法与功能 - fs、path
+title: node核心模块常用语法与功能 - fs、path、vm
 description: fs-文件读写，path-处理路径, vm-虚拟机模块可以执行代码
 categories: [node]
 tags: [fs, path, vm, node]
