@@ -16,6 +16,8 @@ const fs = require('fs');
 //判断文件是否存在，如果不存在抛出异常
 fs.accessSync('c.js');
 
+// 同步读取文件内容
+fs.readFileSync(fileurl, 'utf8')
 
 ```
 
