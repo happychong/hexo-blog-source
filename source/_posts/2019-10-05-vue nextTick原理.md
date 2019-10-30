@@ -3,7 +3,7 @@ layout: default
 title: vue nextTick原理
 description: vue nextTick
 categories: [vue]
-tags: [vue, nextTick]
+tags: [nextTick]
 ---
 # {{ page.title }}
 
