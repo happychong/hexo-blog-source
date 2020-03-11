@@ -2,7 +2,7 @@
 layout: default
 title: ATOM常用快捷键
 description: ATOM常用快捷键
-categories: [周边环境]
+categories: [周边]
 tags: [git]
 ---
 # {{ page.title }}
