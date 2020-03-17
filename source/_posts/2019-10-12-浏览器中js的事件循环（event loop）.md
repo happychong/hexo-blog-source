@@ -3,7 +3,7 @@ layout: default
 title: 浏览器中javascript的事件循环（event loop）
 description: javascript EventLoop
 categories: [javascript]
-tags: ['javascript', 'EventLoop', 'event loop']
+tags: ['EventLoop', 'event loop']
 ---
 # {{ page.title }}
 
@@ -82,5 +82,5 @@ new Promise(function(resolve,reject){
 ![浏览器-event loop](/images/eventLoop.png)
 
 ---
-
-*本文说明性文字内容摘抄自https://www.cnblogs.com/cangqinglang/p/8967268.html*
+* 新版本Node中的事件环和浏览器中的基本一样
+* 本文说明性文字内容摘抄自https://www.cnblogs.com/cangqinglang/p/8967268.html*
