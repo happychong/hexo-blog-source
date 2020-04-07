@@ -374,5 +374,4 @@ runLoaders(options, (err, result) => {
 });
 ```
 
-> webpack 9视频 - 1小时
-> More info: [Deployment](https://hexo.io/docs/deployment.html)
+[webpack原理代码地址点击这里](https://github.com/happychong/2019-zhufeng/tree/master/10.myWebpack/3-webpack-loader)
