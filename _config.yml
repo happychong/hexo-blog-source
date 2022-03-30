@@ -81,5 +81,5 @@ theme: landscape
 deploy:
   type: git
   # repo: https://github.com/happychong/happychong.github.io #https://github.com/happychong/happychong.github.io
-  repo: git@github.com:happychong/hexo-blog-source.git
+  repo: git@github.com:happychong/happychong.github.io.git
   # token: 
