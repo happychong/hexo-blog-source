@@ -80,6 +80,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # repo: https://github.com/happychong/happychong.github.io #https://github.com/happychong/happychong.github.io
-  repo: git@github.com:happychong/happychong.github.io.git
+  repo: https://github.com/happychong/happychong.github.io #https://github.com/happychong/happychong.github.io
+  # repo: git@github.com:happychong/happychong.github.io.git
   # token: 
