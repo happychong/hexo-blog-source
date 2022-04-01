@@ -13,70 +13,34 @@ tags: [git]
 
 ## 解决办法
 
-### 一、git config --global --list 验证邮箱与GitHub注册时输入的是否一致
+### 一、首先生成自己的token、在个人设置页面，找到Setting
+
+![setting](https://img-blog.csdnimg.cn/78e62ce9aae747e4a141bb5ce5d76798.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5YWs5a2Z5YWD5LqM,size_10,color_FFFFFF,t_70,g_se,x_16)
+
+![SSH keys](https://img-blog.csdnimg.cn/bbe3bef2965b4940a3a45e2d5e4b140c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5YWs5a2Z5YWD5LqM,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+![new SSH](https://img-blog.csdnimg.cn/6ba30fb002fa46f9a2674f26a7d4bfff.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5YWs5a2Z5YWD5LqM,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+![new SSH content](https://img-blog.csdnimg.cn/7d96df48a2fa462a94a5803137ffbb57.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5YWs5a2Z5YWD5LqM,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+![new SSH content](https://img-blog.csdnimg.cn/8d315a75e3b04e58bf8b87108958248d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5YWs5a2Z5YWD5LqM,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+![new SSH content](https://img-blog.csdnimg.cn/07029be44b744a0f957d8e34d097e08b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5YWs5a2Z5YWD5LqM,size_20,color_FFFFFF,t_70,g_se,x_16)
+
+注意：
+
+记得把你的token保存下来，因为你再次刷新网页的时候，你已经没有办法看到它了
+
+### 二、token添加远程仓库链接：
+
+把token直接添加远程仓库链接中，这样就可以避免同一个仓库每次提交代码都要输入token了：
 
 ```bash
-$ git config --global --list
-# user.email=14392***@qq.com
-# user.name=14392***@qq.com
-# http.sslverify=false
-```
+git remote set-url origin https://<your_token>@github.com/<USERNAME>/<REPO>.git
+# <your_token>：换成你自己得到的token
+#<USERNAME>：是你自己github的用户名
+#<REPO>：是你的仓库名称
+# 例如：
+# git remote set-url origin https://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@github.com/shliang0603/Yolov4_DeepSocial.git/
 
-### 设置全局用户名和邮箱
-
-```bash
-$ git config --global user.name "username"
-$ git config --global user.email "14392***@qq.com"
-```
-
-### 三、ssh-keygen -t rsa -C “这里换上你的邮箱”，一路回车，在出现选择时输入Y，再一路回车直到生成密钥。会在/Users/***/路径下生成一个.ssh文件夹，密钥就存储在其中
-
-```bash
-$ ssh-keygen -t rsa -C "11**********@qq.com"
-Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
-Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:JtqdeZ9RwhvDEFyQaZa6zTV0OTpD9rNYbWNJ4sNo8r0 11***********@qq.com
-The key's randomart image is:
-+---[RSA 3072]----+
-|         .o*.  . |
-|          B.+.+. |
-|         +.+++1o.|
-|        .. **+++o|
-|      . S++.V*++.|
-|     o +.1o..H.  |
-|    . . + . 1 .  |
-|         . . T   |
-|            o    |
-+----[SHA256]-----+
-```
-
-### 四、复制 /c/Users/Lenovo/.ssh/id_rsa.pub 里面的内容到到git仓库，添加秘钥
-
-![setting](https://s3.51cto.com/images/blog/202110/27170243_617915b341b7746185.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=)
-
-![SSH keys](https://s6.51cto.com/images/blog/202110/27170243_617915b37ffb632672.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=)
-
-![new SSH](https://s5.51cto.com/images/blog/202110/27170243_617915b3ba8f123736.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=)
-
-![new SSH content](https://s3.51cto.com/images/blog/202110/27170244_617915b41a3b740771.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=)
-
-### 五、ssh -T  git@github.com 测试一下通不通，通了显示如下：
-
-```bash
-$ ssh -T git@github.com
-Hi aaro***! You've successfully authenticated, but GitHub does not provide shell access.
-```
-
-现在可以正常使用了。
-
-如果不通如下两步操作即可：
-
-```bash
-$ ssh-agent -s
-$ ssh-add ~/.ssh/id_rsa
 ```
